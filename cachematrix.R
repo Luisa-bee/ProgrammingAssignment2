@@ -5,7 +5,9 @@
 ## and if the coments I made are good, because I think I strugle the most with that.
 ## thanks a lot :) 
 
-## makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse
+## makeCacheMatrix: creates a special "matrix" that can cache its inverse
+## this function gets the values for an inverse matrix, in other words, 
+## creates an invertible matrix 
 
 makeCacheMatrix <- function(x = matrix(sample(1:100,9),3,3)) {
     S <- NULL
@@ -20,9 +22,8 @@ makeCacheMatrix <- function(x = matrix(sample(1:100,9),3,3)) {
 }
 
 
-## This function computes the inverse of the special "matrix" returned by makeCacheMatrix 
-## above. If the inverse has already been calculated (and the matrix has not changed), 
-## then the cachesolve should retrieve the inverse from the cache.
+## This function computes the inverse of the "matrix" returned by makeCacheMatrix 
+## If the inverse has already been calculated, cachesolve retrieves the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
     S <- x$GINV()
